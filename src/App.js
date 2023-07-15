@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import FormInput from './components/FormInput';
 import { useState } from 'react';
+import {mail} from './mail.php'
 
 function App() {
 
@@ -76,7 +77,7 @@ function App() {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     
   }
 
@@ -84,7 +85,9 @@ function App() {
   return (
     <div className="App">
 
-     <form onSubmit={handleSubmit}>
+     <form onSubmit={handleSubmit}  
+     action="mail.php" method="post"
+     >
       <h1>Register</h1>
 
       {inputs.map((inputs)=> (
@@ -100,5 +103,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
